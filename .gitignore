@@ -28,3 +28,36 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+
+# ============================================================
+# Claude Code - Archivos a ignorar
+# ============================================================
+
+# Configuración personal/local (preferencias tuyas, rutas de tu máquina)
+.claude/settings.local.json
+
+# Transcripciones de sesiones (pueden contener info sensible)
+.claude/projects/
+
+# Logs y debug
+.claude/*.log
+.claude/debug/
+
+# Cache y estado de sesión
+.claude/cache/
+.claude/state/
+
+# Imágenes del clipboard pegadas durante sesiones
+.claude/clipboard/
+
+# Plugin caches
+.claude/plugins/cache/
+
+# ============================================================
+# Claude Code - Lo que SÍ debes commitear (referencia)
+# ============================================================
+# .claude/settings.json       ✅ Config compartida del equipo
+# .claude/commands/           ✅ Slash commands del proyecto
+# CLAUDE.md                   ✅ Instrucciones del proyecto
+# .mcp.json                   ✅ MCP servers del proyecto
