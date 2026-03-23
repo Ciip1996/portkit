@@ -1,0 +1,101 @@
+/* ── Press carousel: desktop hover (pointer device) ────────────── */
+@media (hover: hover) and (pointer: fine) and (min-width: 768px) {
+  .card:hover {
+    transform: scale(1.08) rotate(0deg) !important;
+    z-index: 10;
+    border-color: hsl(var(--press-quote) / 0.5);
+    box-shadow: 4px 6px 24px rgba(0, 0, 0, 0.2), 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .card:hover .cardTitle {
+    color: hsl(var(--press-quote));
+  }
+}
+
+/* ── Press carousel: mobile/touch expand ───────────────────────── */
+@media (hover: none), (pointer: coarse), (max-width: 767px) {
+  .carousel {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .carousel::-webkit-scrollbar {
+    display: none;
+  }
+
+  .carousel.modalOpen {
+    overflow: visible !important;
+  }
+
+  .carousel.modalOpen .scrollTrack {
+    animation: none !important;
+    transform: none !important;
+    will-change: auto !important;
+  }
+
+  .carousel.modalOpen::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: hsl(var(--background) / 0.85);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    z-index: 40;
+  }
+
+  .carousel.modalOpen .card:focus-within {
+    position: fixed !important;
+    z-index: 50 !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) rotate(0deg) !important;
+    width: min(calc(100vw - 3rem), 24rem) !important;
+    max-height: calc(100dvh - 3rem);
+    overflow-y: auto;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    background-color: hsl(var(--press-bg));
+    border-color: hsl(var(--press-quote) / 0.4);
+    box-shadow: 4px 8px 32px rgba(0, 0, 0, 0.25);
+    outline: 2px solid hsl(var(--press-quote) / 0.3);
+    outline-offset: 2px;
+  }
+
+  .carousel.modalOpen .card:focus-within .cardSource {
+    font-size: 1rem;
+  }
+
+  .carousel.modalOpen .card:focus-within .cardLang {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .carousel.modalOpen .card:focus-within .cardDate {
+    font-size: 0.875rem;
+  }
+
+  .carousel.modalOpen .card:focus-within .cardTitle {
+    overflow: visible;
+    display: block;
+    -webkit-line-clamp: unset;
+    font-size: 1.125rem;
+    line-height: 1.4;
+    color: hsl(var(--press-fg));
+  }
+
+  .carousel.modalOpen .card:focus-within .cardExcerpt {
+    overflow: visible;
+    display: block;
+    -webkit-line-clamp: unset;
+    font-size: 0.875rem;
+    line-height: 1.625;
+    color: hsl(var(--press-muted));
+  }
+
+  .carousel.modalOpen .card:focus-within .cardLink {
+    font-size: 0.875rem;
+    gap: 0.5rem;
+  }
+}

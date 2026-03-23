@@ -1,0 +1,235 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 20% 4%;
+    --foreground: 210 20% 92%;
+
+    --card: 220 18% 7%;
+    --card-foreground: 210 20% 92%;
+
+    --popover: 220 18% 7%;
+    --popover-foreground: 210 20% 92%;
+
+    --primary: 160 84% 39%;
+    --primary-foreground: 220 20% 4%;
+
+    --secondary: 220 16% 12%;
+    --secondary-foreground: 210 20% 80%;
+
+    --muted: 220 14% 14%;
+    --muted-foreground: 215 12% 65%;
+
+    --accent: 160 84% 39%;
+    --accent-foreground: 220 20% 4%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 14% 14%;
+    --input: 220 14% 18%;
+    --ring: 160 84% 39%;
+
+    --radius: 0.75rem;
+
+    --gradient-primary: linear-gradient(135deg, hsl(160, 84%, 39%), hsl(180, 70%, 35%));
+    --gradient-glow: radial-gradient(ellipse at 50% 0%, hsl(160 84% 39% / 0.15), transparent 60%);
+
+    --press-bg: 40 30% 93%;
+    --press-fg: 30 10% 15%;
+    --press-border: 40 20% 75%;
+    --press-muted: 30 8% 45%;
+    --press-quote: 160 84% 39%;
+  }
+
+  html.light {
+    --background: 0 0% 98%;
+    --foreground: 220 15% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 15% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 15% 12%;
+
+    --primary: 160 70% 32%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 15% 93%;
+    --secondary-foreground: 220 15% 25%;
+
+    --muted: 220 15% 91%;
+    --muted-foreground: 215 12% 42%;
+
+    --accent: 160 70% 32%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 47%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 85%;
+    --input: 220 15% 88%;
+    --ring: 160 70% 32%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(160, 70%, 32%), hsl(180, 60%, 28%));
+    --gradient-glow: radial-gradient(ellipse at 50% 0%, hsl(160 70% 32% / 0.1), transparent 60%);
+
+    --press-bg: 40 30% 97%;
+    --press-fg: 30 10% 15%;
+    --press-border: 40 20% 82%;
+    --press-muted: 30 8% 42%;
+    --press-quote: 160 70% 32%;
+  }
+
+  @media (prefers-color-scheme: light) {
+    html:not(.dark):not(.light) {
+      --background: 0 0% 98%;
+      --foreground: 220 15% 12%;
+      --card: 0 0% 100%;
+      --card-foreground: 220 15% 12%;
+      --popover: 0 0% 100%;
+      --popover-foreground: 220 15% 12%;
+      --primary: 160 70% 32%;
+      --primary-foreground: 0 0% 100%;
+      --secondary: 220 15% 93%;
+      --secondary-foreground: 220 15% 25%;
+      --muted: 220 15% 91%;
+      --muted-foreground: 215 12% 42%;
+      --accent: 160 70% 32%;
+      --accent-foreground: 0 0% 100%;
+      --destructive: 0 84.2% 47%;
+      --destructive-foreground: 0 0% 100%;
+      --border: 220 15% 85%;
+      --input: 220 15% 88%;
+      --ring: 160 70% 32%;
+      --gradient-primary: linear-gradient(135deg, hsl(160, 70%, 32%), hsl(180, 60%, 28%));
+      --gradient-glow: radial-gradient(ellipse at 50% 0%, hsl(160 70% 32% / 0.1), transparent 60%);
+
+      --press-bg: 40 30% 97%;
+      --press-fg: 30 10% 15%;
+      --press-border: 40 20% 82%;
+      --press-muted: 30 8% 42%;
+      --press-quote: 160 70% 32%;
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    font-family: var(--font-space-grotesk), sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-space-grotesk), sans-serif;
+  }
+
+  code, pre {
+    font-family: var(--font-jetbrains-mono), monospace;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
+  }
+
+  .glow-top {
+    background-image: var(--gradient-glow);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(220, 20%, 4%);
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(220, 14%, 20%);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(160, 84%, 39%);
+}
+
+html.light ::-webkit-scrollbar-track,
+html.light::-webkit-scrollbar-track {
+  background: hsl(0, 0%, 94%);
+}
+html.light ::-webkit-scrollbar-thumb,
+html.light::-webkit-scrollbar-thumb {
+  background: hsl(220, 15%, 78%);
+}
+html.light ::-webkit-scrollbar-thumb:hover,
+html.light::-webkit-scrollbar-thumb:hover {
+  background: hsl(160, 70%, 32%);
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not(.dark):not(.light) ::-webkit-scrollbar-track {
+    background: hsl(0, 0%, 94%);
+  }
+  :root:not(.dark):not(.light) ::-webkit-scrollbar-thumb {
+    background: hsl(220, 15%, 78%);
+    border-radius: 3px;
+  }
+  :root:not(.dark):not(.light) ::-webkit-scrollbar-thumb:hover {
+    background: hsl(160, 70%, 32%);
+  }
+}
+
+::selection {
+  background: hsl(160, 84%, 39% / 0.3);
+  color: hsl(160, 84%, 60%);
+}
+
+::-moz-selection {
+  background: hsl(160, 84%, 39% / 0.3);
+  color: hsl(160, 84%, 60%);
+}
+
+html.light ::selection {
+  background: hsl(160, 70%, 32% / 0.2);
+  color: hsl(160, 70%, 22%);
+}
+
+html.light ::-moz-selection {
+  background: hsl(160, 70%, 32% / 0.2);
+  color: hsl(160, 70%, 22%);
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not(.dark):not(.light) ::selection {
+    background: hsl(160, 70%, 32% / 0.2);
+    color: hsl(160, 70%, 22%);
+  }
+  :root:not(.dark):not(.light) ::-moz-selection {
+    background: hsl(160, 70%, 32% / 0.2);
+    color: hsl(160, 70%, 22%);
+  }
+}

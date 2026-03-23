@@ -1,0 +1,60 @@
+---
+description: Full project context for Ivan Pacheco's portfolio site (ciip)
+alwaysApply: true
+---
+
+# Project Context
+
+Personal portfolio website for Ivan Pacheco — a Next.js 15 App Router site with SSG, no backend.
+
+## Tech Stack
+
+Next.js 15 (App Router, SSG) · React 18 · TypeScript 5.8 · Tailwind CSS 3 · Framer Motion · Radix UI (dialog only) · Lucide icons
+
+## File Structure
+
+```
+app/
+  layout.tsx              # Root: next/font (Space Grotesk + JetBrains Mono), Metadata API, JSON-LD
+  page.tsx                # Home — composes all sections
+  not-found.tsx           # 404 page
+  globals.css             # Tailwind + CSS variables (HSL dark theme)
+  sitemap.ts              # Auto-generated XML sitemap
+  robots.ts               # Crawler rules
+  opengraph-image.tsx     # Edge-rendered OG image (1200x630)
+components/
+  navbar.tsx              # Fixed nav, mobile hamburger, scroll-aware blur ("use client")
+  hero-section.tsx        # Profile photo (next/image), bio, social links ("use client")
+  experience-section.tsx  # 7-entry work timeline ("use client")
+  skills-section.tsx      # 7-category skill grid ("use client")
+  education-section.tsx   # 4 education cards + achievement + DiplomaGallery ("use client")
+  diploma-gallery.tsx     # PDF carousel with Dialog viewer ("use client")
+  projects-section.tsx    # 4 featured project cards ("use client")
+  contact-section.tsx     # 5 contact links ("use client")
+  ui/
+    dialog.tsx            # Radix dialog primitive — only UI component
+lib/
+  utils.ts                # cn() — clsx + tailwind-merge
+public/
+  profile-photo.jpg       # Hero profile image
+  diplomas/               # PDF certificates
+  favicon.ico
+```
+
+## Key Conventions
+
+- **Data**: All content hardcoded as const arrays in each component. No API calls.
+- **Routing**: Single page (`/`) with anchor links (`#experience`, `#skills`, etc.).
+- **SEO**: Full Metadata API, JSON-LD Person schema, sitemap.ts, robots.ts, dynamic OG image.
+- **Fonts**: next/font/google — Space Grotesk (body) + JetBrains Mono (code). Zero FOUT.
+- **Styling**: Dark-only theme. HSL CSS variables. Primary: `hsl(160 84% 39%)` (teal/green). Card pattern: `bg-card border-border hover:border-primary/30`.
+- **Animation**: Framer Motion `whileInView` with `viewport={{ once: true }}`. Staggered children `delay: i * 0.08`.
+- **Components**: All sections are `"use client"` (Framer Motion). Layout/page are Server Components.
+- **Images**: next/image with priority on hero photo, AVIF/WebP formats.
+
+## Scripts
+
+- `npm run dev` — Next.js dev server (port 3000)
+- `npm run build` — Production SSG build
+- `npm run start` — Serve production build
+- `npm run lint` — Next.js ESLint
