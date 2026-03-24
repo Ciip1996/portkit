@@ -3,48 +3,47 @@
 import { motion } from "framer-motion";
 import { Mail, Github, Linkedin, Phone, Globe } from "lucide-react";
 import { useTranslation } from "@/lib/i18n";
-import { portfolio } from "@/config/portfolio";
-
-const { social, author } = portfolio;
-
-const baseLinks = [
-  {
-    icon: Mail,
-    label: author.email,
-    href: social.email,
-  },
-  {
-    icon: Linkedin,
-    label: social.linkedin.replace("https://www.", ""),
-    href: social.linkedin,
-  },
-  {
-    icon: Github,
-    label: social.github.replace("https://", ""),
-    href: social.github,
-  },
-  {
-    icon: Globe,
-    label: social.website.replace("https://", ""),
-    href: social.website,
-  },
-];
-
-const phoneLink = {
-  icon: Phone,
-  label: author.phone,
-  href: `tel:${author.phone.replace(/\s+/g, "")}`,
-};
 
 interface ContactSectionProps {
   showPhone?: boolean;
 }
 
 export default function ContactSection({ showPhone = false }: ContactSectionProps) {
+  const t = useTranslation();
+  const { email, phone, github, linkedin, website } = t.profile;
+
+  const baseLinks = [
+    {
+      icon: Mail,
+      label: email,
+      href: email.startsWith("mailto:") ? email : `mailto:${email}`,
+    },
+    {
+      icon: Linkedin,
+      label: linkedin.replace(/^https?:\/\/(www\.)?/, ""),
+      href: linkedin,
+    },
+    {
+      icon: Github,
+      label: github.replace(/^https?:\/\//, ""),
+      href: github,
+    },
+    {
+      icon: Globe,
+      label: website.replace(/^https?:\/\//, ""),
+      href: website,
+    },
+  ];
+
+  const phoneLink = {
+    icon: Phone,
+    label: phone,
+    href: `tel:${phone.replace(/\s+/g, "")}`,
+  };
+
   const links = showPhone
     ? [baseLinks[0], phoneLink, ...baseLinks.slice(1)]
     : baseLinks;
-  const t = useTranslation();
 
   return (
     <section id="contact" className="py-20 sm:py-24">

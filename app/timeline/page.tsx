@@ -1,18 +1,19 @@
 import type { Metadata } from "next";
 import TimelinePageContent from "@/components/layout/timeline-page-content";
 import { SITE_URL } from "@/lib/constants";
+import { portfolio } from "@/config/portfolio";
+
+const { author } = portfolio;
 
 export const metadata: Metadata = {
   title: "Timeline",
-  description:
-    "A complete chronological timeline of Ivan Pacheco's career, education, exchange programs, awards, and certifications — from 2016 to present.",
+  description: `A complete chronological timeline of ${author.displayName}'s career, education, exchange programs, awards, and certifications.`,
   alternates: {
     canonical: `${SITE_URL}/timeline`,
   },
   openGraph: {
-    title: "Timeline — Ivan Pacheco",
-    description:
-      "Full career and academic timeline of Ivan Pacheco — Software Engineer.",
+    title: `Timeline — ${author.displayName}`,
+    description: `Full career and academic timeline of ${author.displayName} — ${author.jobTitle}.`,
     url: `${SITE_URL}/timeline`,
     type: "website",
   },

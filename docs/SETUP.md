@@ -18,8 +18,8 @@ This guide walks you through cloning, configuring, and running the portfolio tem
 
 ```bash
 # Fork the repo on GitHub, then clone your fork:
-git clone https://github.com/your-username/ciip.git
-cd ciip
+git clone https://github.com/your-username/portkit.git
+cd portkit
 ```
 
 ---
@@ -35,7 +35,8 @@ npm install
 ## 3. Configure Environment Variables
 
 ```bash
-cp .env.example .env.local
+npm run setup
+# This copies .env.example → .env.local (skips if .env.local already exists)
 ```
 
 Open `.env.local` and set the following:

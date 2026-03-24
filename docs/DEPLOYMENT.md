@@ -8,7 +8,7 @@ Vercel is the easiest deployment target for this Next.js project.
 
 ### One-click deploy
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FCiip1996%2Fciip)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FCiip1996%2Fportkit)
 
 ### Manual deploy steps
 

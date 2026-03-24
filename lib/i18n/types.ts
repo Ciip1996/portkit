@@ -1,4 +1,20 @@
 export interface Dictionary {
+  /**
+   * Personal profile info — overrides config/portfolio.ts when set via admin.
+   * Stored in Redis as content:en:profile / content:es:profile.
+   */
+  profile: {
+    firstName: string;
+    lastName: string;
+    jobTitle: string;
+    email: string;
+    phone: string;
+    github: string;
+    linkedin: string;
+    website: string;
+    location: string;
+  };
+
   nav: {
     experience: string;
     skills: string;

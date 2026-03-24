@@ -1,12 +1,32 @@
 {
-  "name": "ivan-pacheco-portfolio",
-  "private": true,
+  "name": "nextjs-portfolio-template",
+  "description": "Open-source developer portfolio template with CMS admin, portfolio variants, bilingual support, and one-click Vercel deploy. Built with Next.js 15, TypeScript, and Tailwind CSS.",
   "version": "1.0.0",
+  "license": "MIT",
+  "author": "Ivan Pacheco <bytepacheco@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Ciip1996/portkit.git"
+  },
+  "keywords": [
+    "portfolio",
+    "nextjs",
+    "template",
+    "typescript",
+    "tailwindcss",
+    "open-source",
+    "cms",
+    "framer-motion",
+    "vercel",
+    "developer-portfolio"
+  ],
+  "private": false,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "setup": "cp -n .env.example .env.local && echo 'Created .env.local — fill in your values before starting the dev server.'"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.14",

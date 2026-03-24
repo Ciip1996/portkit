@@ -1,6 +1,6 @@
 # Portfolio Template
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FCiip1996%2Fciip)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FCiip1996%2Fportkit)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Next.js](https://img.shields.io/badge/Next.js-15-black)](https://nextjs.org)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.8-blue)](https://www.typescriptlang.org)
@@ -36,15 +36,15 @@ A modern, open-source developer portfolio template built with **Next.js 15**, **
 
 ```bash
 # 1. Clone or fork the repository
-git clone https://github.com/Ciip1996/ciip.git
-cd ciip
+git clone https://github.com/Ciip1996/portkit.git
+cd portkit
 
 # 2. Install dependencies
 npm install
 
-# 3. Configure your environment
-cp .env.example .env.local
-# Edit .env.local — set PORTFOLIO_PIN, PORTFOLIO_TOKEN_SECRET, and optionally Redis
+# 3. Create your .env.local from the template
+npm run setup
+# Then edit .env.local — set PORTFOLIO_PIN, PORTFOLIO_TOKEN_SECRET, and optionally Redis
 
 # 4. Start the dev server
 npm run dev
@@ -125,7 +125,7 @@ Create custom portfolio links tailored to specific job applications:
 
 ### Vercel (recommended)
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FCiip1996%2Fciip)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FCiip1996%2Fportkit)
 
 Set these environment variables in your Vercel project settings:
 
@@ -212,7 +212,7 @@ npm run lint     # ESLint
 
 ## Contributing
 
-Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) before submitting a pull request.
+Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) before submitting a pull request. This project follows the [Contributor Covenant](CODE_OF_CONDUCT.md) code of conduct.
 
 ---
 

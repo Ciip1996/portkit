@@ -6,8 +6,8 @@ Thank you for considering contributing to this open-source portfolio template! C
 
 1. **Fork** the repository and clone your fork:
    ```bash
-   git clone https://github.com/your-username/ciip.git
-   cd ciip
+   git clone https://github.com/your-username/portkit.git
+   cd portkit
    ```
 
 2. **Install dependencies:**

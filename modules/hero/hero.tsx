@@ -7,7 +7,7 @@ import Image from "next/image";
 import { useTranslation } from "@/lib/i18n";
 import { portfolio } from "@/config/portfolio";
 
-const { photos: PHOTOS, social } = portfolio;
+const { photos: PHOTOS } = portfolio;
 
 const INTERVAL_MS = 5000;
 
@@ -149,7 +149,7 @@ export default function HeroSection() {
               className="flex items-center justify-center md:justify-start gap-3 flex-wrap"
             >
               <a
-                href={social.github}
+                href={t.profile.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-lg bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
@@ -158,7 +158,7 @@ export default function HeroSection() {
                 <Github className="w-5 h-5" />
               </a>
               <a
-                href={social.linkedin}
+                href={t.profile.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-lg bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
@@ -167,7 +167,7 @@ export default function HeroSection() {
                 <Linkedin className="w-5 h-5" />
               </a>
               <a
-                href={social.email}
+                href={t.profile.email.startsWith("mailto:") ? t.profile.email : `mailto:${t.profile.email}`}
                 className="p-3 rounded-lg bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
                 aria-label="Email"
               >

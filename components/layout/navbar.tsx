@@ -7,6 +7,7 @@ import { Menu, X, Sun, Moon, Monitor, Languages } from "lucide-react";
 import { useTheme } from "@/components/providers/theme-provider";
 import { useLang } from "@/components/providers/language-provider";
 import { useTranslation } from "@/lib/i18n";
+import { portfolio } from "@/config/portfolio";
 import type { SectionId } from "@/lib/variants";
 
 const themeIcons = {
@@ -125,7 +126,8 @@ export default function Navbar({ visibleSections }: NavbarProps) {
                 exit={{ opacity: 0, y: -8 }}
                 transition={{ duration: 0.25 }}
               >
-                Ivan <span className="text-primary">Pacheco</span>
+                {portfolio.author.firstName}{" "}
+                <span className="text-primary">{portfolio.author.lastName}</span>
               </motion.span>
             ) : (
               <motion.span
@@ -135,7 +137,8 @@ export default function Navbar({ visibleSections }: NavbarProps) {
                 exit={{ opacity: 0, y: -8 }}
                 transition={{ duration: 0.25 }}
               >
-                IP<span className="text-primary">.</span>
+                {portfolio.author.firstName[0]}{portfolio.author.lastName[0]}
+                <span className="text-primary">.</span>
               </motion.span>
             )}
           </AnimatePresence>

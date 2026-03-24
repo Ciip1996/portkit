@@ -1,6 +1,19 @@
 import type { Dictionary } from "./types";
+import { portfolio } from "@/config/portfolio";
 
 export const en: Dictionary = {
+  profile: {
+    firstName: portfolio.author.firstName,
+    lastName: portfolio.author.lastName,
+    jobTitle: portfolio.author.jobTitle,
+    email: portfolio.author.email,
+    phone: portfolio.author.phone,
+    github: portfolio.social.github,
+    linkedin: portfolio.social.linkedin,
+    website: portfolio.social.website,
+    location: portfolio.author.location,
+  },
+
   nav: {
     experience: "Experience",
     skills: "Skills",
