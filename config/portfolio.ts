@@ -50,7 +50,7 @@ export const portfolio = {
     website: "https://ivanpacheco.dev",
     /** Social profiles — also listed in JSON-LD sameAs so search engines link them to you */
     instagram: "https://www.instagram.com/ivani.dev/",
-    tiktok: "https://www.tiktok.com/@civan.js",
+    tiktok: "https://www.tiktok.com/@ivani.dev",
   },
 
   // ── Profile Photos ─────────────────────────────────────────────────────────

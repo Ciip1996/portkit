@@ -528,8 +528,8 @@ export const es: Dictionary = {
       },
       {
         platform: "tiktok",
-        handle: "@civan.js",
-        url: "https://www.tiktok.com/@civan.js",
+        handle: "@ivani.dev",
+        url: "https://www.tiktok.com/@ivani.dev",
         description: "Videos cortos sobre tecnología, gadgets y trabajar en Microsoft.",
       },
     ],
