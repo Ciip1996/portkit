@@ -303,9 +303,21 @@ export const en: Dictionary = {
   },
 
   projects: {
-    sectionLabel: "Contractor",
-    heading: "Contractor Projects",
+    sectionLabel: "Projects",
+    heading: "Featured Projects",
     items: [
+      {
+        title: "VerifiA — Cryptographic Presence Verification",
+        role: "Master’s Thesis · Tec de Monterrey",
+        period: "2025 – 2026",
+        description:
+          "Verification platform that issues a short-lived cryptographic “presence badge” proving a person was physically present, passed a certified 3D liveness check (FaceTec, iBeta ISO 30107-3 Levels 1 & 2), and authorized with Face ID via Passkeys on genuine Apple hardware (App Attest). Built to counter AI-assisted fraud such as deepfakes and voice cloning. A web portal shows a QR code with a one-time nonce, the iOS app scans it and runs the security checks, and the backend issues a single-use ES256 JWT that the portal validates.",
+        tags: ["Cybersecurity", "Passkeys", "App Attest", "JWT (ES256)", "TypeScript", "Node.js", "Prisma", "PostgreSQL", "React", "Flutter"],
+        github: "https://github.com/Ciip1996/VerifiA",
+        featured: true,
+        status: "Completed" as const,
+        metrics: "Badge valid 2–5 min · 4 layered security checks",
+      },
       {
         title: "Christie\u2019s International Real Estate",
         role: "Tech Lead @ Wizeline",
@@ -338,6 +350,17 @@ export const en: Dictionary = {
         tags: ["React", "TypeScript", "SCSS", "Arc XP", "Jest"],
         status: "Completed" as const,
         metrics: "30,000+ paid subscribers in year one \u00b7 $50M+ funded",
+      },
+      {
+        title: "Tracker me",
+        role: "Co-founder · Student Startup",
+        period: "2017",
+        description:
+          "Vehicle geolocation system that let owners see a car’s location and security status in real time — such as a broken window, a triggered alarm, or the engine starting — and shut it off remotely. Built with two fellow students and pitched to seed investors at the 5th “Now” Demo Day at Tec de Monterrey León.",
+        tags: ["iOS", "GPS", "IoT", "Startup"],
+        github: "https://github.com/Ciip1996/TrackerMe",
+        status: "Archived" as const,
+        metrics: "Featured in Periódico AM (2017)",
       },
     ],
     visitAriaLabel: "Visit",
@@ -433,6 +456,15 @@ export const en: Dictionary = {
         lang: "ES",
       },
       {
+        title: "Mexican Engineer Lands a Job at Microsoft After More Than 200 Rejections",
+        source: "El Congresista",
+        date: "Oct 2026",
+        excerpt:
+          "Guanajuato news site covering his path from León to a software engineering role at Microsoft, including his studies abroad.",
+        url: "https://elcongresista.mx/politica/guanajuato/ingeniero-mexicano-empleo-microsoft",
+        lang: "ES",
+      },
+      {
         title: "The 2019 Global Korea Scholarship for African and Latin American Undergraduate Students Comes to a Successful Close",
         source: "Dongseo University",
         date: "Aug 2019",
@@ -476,6 +508,29 @@ export const en: Dictionary = {
           "\"Uriel Hernández, Iván Ibarra, and David Alcaraz developed 'Tracker me', a vehicle geolocation system …\" — Regional newspaper coverage of the 5th 'Now' Demo Day at Tec de Monterrey León, where the team pitched to seed investors.",
         url: "https://www.am.com.mx/news/2017/06/06/invierten-en-start-up-291518.html",
         lang: "ES",
+      },
+    ],
+  },
+
+  social: {
+    enabled: true,
+    sectionLabel: "Social",
+    heading: "Follow My Journey",
+    subtitle:
+      "Life as a Mexican software engineer at Microsoft — career tips, scholarships, studying abroad, and tech.",
+    followLabel: "Follow",
+    links: [
+      {
+        platform: "instagram",
+        handle: "@ivani.dev",
+        url: "https://www.instagram.com/ivani.dev/",
+        description: "Career tips, scholarships, and life in Seattle.",
+      },
+      {
+        platform: "tiktok",
+        handle: "@civan.js",
+        url: "https://www.tiktok.com/@civan.js",
+        description: "Short videos on tech, gadgets, and working at Microsoft.",
       },
     ],
   },

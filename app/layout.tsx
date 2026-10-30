@@ -66,11 +66,17 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: author.displayName,
+  // Full legal name as used in press coverage, so search engines connect both names.
+  alternateName: ["Carlos Iván Ibarra Pacheco", "Iván Ibarra Pacheco"],
+  birthPlace: {
+    "@type": "Place",
+    name: "León, Guanajuato, Mexico",
+  },
   jobTitle: author.jobTitle,
   description: author.shortBio,
   url: siteUrl,
   image: `${siteUrl}/profile-photo.jpg`,
-  sameAs: [social.github, social.linkedin],
+  sameAs: [social.github, social.linkedin, social.instagram, social.tiktok],
   email: author.email,
   knowsAbout: [...ld.knowsAbout],
   alumniOf: ld.alumniOf.map((name) => ({

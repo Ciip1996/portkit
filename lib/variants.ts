@@ -47,7 +47,7 @@ export const ALL_SECTIONS: { id: SectionId; label: string }[] = [
   { id: "experience", label: "Work Experience" },
   { id: "skills", label: "Skills & Technologies" },
   { id: "education", label: "Education" },
-  { id: "projects", label: "Contractor Projects" },
+  { id: "projects", label: "Featured Projects" },
   { id: "freelance", label: "Freelance Projects" },
   { id: "demos", label: "Work Demos" },
   { id: "press", label: "In the Media" },

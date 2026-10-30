@@ -48,6 +48,9 @@ export const portfolio = {
     email: "mailto:bytepacheco@gmail.com",
     /** Your portfolio/personal website */
     website: "https://ivanpacheco.dev",
+    /** Social profiles — also listed in JSON-LD sameAs so search engines link them to you */
+    instagram: "https://www.instagram.com/ivani.dev/",
+    tiktok: "https://www.tiktok.com/@civan.js",
   },
 
   // ── Profile Photos ─────────────────────────────────────────────────────────

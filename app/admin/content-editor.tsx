@@ -12,7 +12,7 @@ import {
   ChevronDown, ChevronUp, GripVertical, Save,
   Loader2, AlertCircle, User, Briefcase, Code2,
   GraduationCap, FolderGit2, Newspaper, Mail,
-  Play, BookOpen, Clock, Navigation, FileText, Link2,
+  Play, BookOpen, Clock, Navigation, FileText, Link2, AtSign,
 } from "lucide-react";
 import { en } from "@/lib/i18n/en";
 import type { Dictionary } from "@/lib/i18n/types";
@@ -505,6 +505,83 @@ function DiplomasEditor({ data, onChange }: { data: Dictionary["diplomas"]; onCh
   );
 }
 
+type SocialLink = Dictionary["social"]["links"][number];
+
+const SOCIAL_PLATFORMS: Array<{ value: SocialLink["platform"]; label: string }> = [
+  { value: "instagram", label: "Instagram" },
+  { value: "tiktok", label: "TikTok" },
+  { value: "youtube", label: "YouTube" },
+  { value: "x", label: "X (Twitter)" },
+  { value: "other", label: "Other" },
+];
+
+function SocialEditor({ data, onChange }: { data: Dictionary["social"]; onChange: (d: Dictionary["social"]) => void }) {
+  const [editIdx, setEditIdx] = useState<number | null>(null);
+  const [draft, setDraft] = useState<SocialLink | null>(null);
+
+  const openEdit = (i: number) => { setEditIdx(i); setDraft({ ...data.links[i] }); };
+  const openAdd = () => { setEditIdx(-1); setDraft({ platform: "instagram", handle: "", url: "", description: "" }); };
+  const saveItem = () => {
+    if (!draft) return;
+    const next = [...data.links];
+    if (editIdx === -1) next.push(draft); else next[editIdx!] = draft;
+    onChange({ ...data, links: next }); setEditIdx(null); setDraft(null);
+  };
+
+  if (draft !== null && editIdx !== null) {
+    return (
+      <div className="space-y-4">
+        <div className="flex items-center justify-between">
+          <h4 className="font-medium">{editIdx === -1 ? "Add Social Profile" : "Edit Social Profile"}</h4>
+          <button onClick={() => { setEditIdx(null); setDraft(null); }} className="p-1 text-muted-foreground hover:text-foreground"><X className="w-4 h-4" /></button>
+        </div>
+        <div>
+          <label className="block text-xs font-medium text-muted-foreground mb-1">Platform</label>
+          <select
+            value={draft.platform}
+            onChange={(e) => setDraft({ ...draft, platform: e.target.value as SocialLink["platform"] })}
+            className="w-full px-3 py-2 rounded-lg border border-border bg-background text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
+          >
+            {SOCIAL_PLATFORMS.map((p) => <option key={p.value} value={p.value}>{p.label}</option>)}
+          </select>
+        </div>
+        <TextField label="Handle" value={draft.handle} onChange={(v) => setDraft({ ...draft, handle: v })} placeholder="@yourhandle" />
+        <TextField label="Profile URL" value={draft.url} onChange={(v) => setDraft({ ...draft, url: v })} placeholder="https://www.instagram.com/yourhandle/" />
+        <TextField label="Short description (optional)" value={draft.description ?? ""} onChange={(v) => setDraft({ ...draft, description: v || undefined })} />
+        <div className="flex gap-2 justify-end">
+          <button onClick={() => { setEditIdx(null); setDraft(null); }} className="px-3 py-1.5 rounded-lg border border-border text-sm text-muted-foreground hover:text-foreground transition-colors">Cancel</button>
+          <button onClick={saveItem} className="px-3 py-1.5 rounded-lg bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 transition-opacity">Save</button>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="space-y-4">
+      <label className="flex items-center justify-between gap-4 p-3 rounded-lg border border-border bg-background cursor-pointer">
+        <span>
+          <span className="block text-sm font-medium">Show social section</span>
+          <span className="block text-xs text-muted-foreground">Displays your Instagram / TikTok cards above the contact section on every page.</span>
+        </span>
+        <input
+          type="checkbox"
+          role="switch"
+          checked={data.enabled}
+          onChange={(e) => onChange({ ...data, enabled: e.target.checked })}
+          className="w-5 h-5 accent-primary shrink-0"
+        />
+      </label>
+      <SectionMeta data={data as unknown as Record<string, string>} onChange={(key, v) => onChange({ ...data, [key]: v })} fields={[
+        { key: "sectionLabel", label: "Section Label" },
+        { key: "heading", label: "Heading" },
+        { key: "subtitle", label: "Subtitle", multiline: true },
+        { key: "followLabel", label: "\"Follow\" button text" },
+      ]} />
+      <ItemList items={data.links} onAdd={openAdd} onEdit={openEdit} onDelete={(i) => onChange({ ...data, links: data.links.filter((_, j) => j !== i) })} renderTitle={(l) => `${SOCIAL_PLATFORMS.find((p) => p.value === l.platform)?.label ?? l.platform} — ${l.handle}`} />
+    </div>
+  );
+}
+
 type PressItem = Dictionary["press"]["items"][number];
 
 function PressEditor({ data, onChange }: { data: Dictionary["press"]; onChange: (d: Dictionary["press"]) => void }) {
@@ -729,6 +806,7 @@ const SECTION_CONFIG: Array<{
   { key: "diplomas", label: "Diplomas", icon: BookOpen, description: "Certificates and PDF diplomas" },
   { key: "demos", label: "Demos", icon: Play, description: "Video demo entries" },
   { key: "press", label: "Press", icon: Newspaper, description: "Media mentions and articles" },
+  { key: "social", label: "Social", icon: AtSign, description: "Instagram / TikTok section — show or hide it" },
   { key: "timelinePage", label: "Timeline", icon: Clock, description: "Career timeline events and page labels" },
   { key: "contact", label: "Contact", icon: Mail, description: "Contact section heading and subtitle" },
   { key: "nav", label: "Navigation", icon: Navigation, description: "Nav link labels and language toggle" },
@@ -798,6 +876,7 @@ function SectionPanel({ sectionKey, lang }: { sectionKey: SectionKey; lang: Lang
       case "diplomas": return <DiplomasEditor data={content as Dictionary["diplomas"]} onChange={(d) => setContent(d as Dictionary[SectionKey])} />;
       case "demos": return <DemosEditor data={content as Dictionary["demos"]} onChange={(d) => setContent(d as Dictionary[SectionKey])} />;
       case "press": return <PressEditor data={content as Dictionary["press"]} onChange={(d) => setContent(d as Dictionary[SectionKey])} />;
+      case "social": return <SocialEditor data={content as Dictionary["social"]} onChange={(d) => setContent(d as Dictionary[SectionKey])} />;
       case "timelinePage": return <TimelineEditor data={content as Dictionary["timelinePage"]} onChange={(d) => setContent(d as Dictionary[SectionKey])} />;
       case "contact":
         return (

@@ -303,9 +303,21 @@ export const es: Dictionary = {
   },
 
   projects: {
-    sectionLabel: "Contratista",
-    heading: "Proyectos como Contratista",
+    sectionLabel: "Proyectos",
+    heading: "Proyectos Destacados",
     items: [
+      {
+        title: "VerifiA — Verificación Criptográfica de Presencia",
+        role: "Tesis de Maestría · Tec de Monterrey",
+        period: "2025 – 2026",
+        description:
+          "Plataforma de verificación que emite una “credencial de presencia” criptográfica de corta duración, que prueba que una persona estuvo físicamente presente, pasó una prueba de vida 3D certificada (FaceTec, iBeta ISO 30107-3 Niveles 1 y 2) y autorizó con Face ID mediante Passkeys en hardware Apple genuino (App Attest). Diseñada para combatir fraudes asistidos por IA como deepfakes y clonación de voz. Un portal web muestra un código QR con un nonce de un solo uso, la app de iOS lo escanea y ejecuta las verificaciones de seguridad, y el backend emite un JWT ES256 de un solo uso que el portal valida.",
+        tags: ["Ciberseguridad", "Passkeys", "App Attest", "JWT (ES256)", "TypeScript", "Node.js", "Prisma", "PostgreSQL", "React", "Flutter"],
+        github: "https://github.com/Ciip1996/VerifiA",
+        featured: true,
+        status: "Completed" as const,
+        metrics: "Credencial válida 2–5 min · 4 capas de seguridad",
+      },
       {
         title: "Christie\u2019s International Real Estate",
         role: "Tech Lead @ Wizeline",
@@ -338,6 +350,17 @@ export const es: Dictionary = {
         tags: ["React", "TypeScript", "SCSS", "Arc XP", "Jest"],
         status: "Completed" as const,
         metrics: "30,000+ suscriptores de pago en el primer a\u00f1o \u00b7 $50M+ en fondos",
+      },
+      {
+        title: "Tracker me",
+        role: "Cofundador · Startup Estudiantil",
+        period: "2017",
+        description:
+          "Sistema de geolocalización vehicular que permitía ver en tiempo real la ubicación y el estado de seguridad del auto —como un vidrio roto, la alarma activada o el encendido del motor— y apagarlo a distancia. Desarrollado con dos compañeros y presentado ante inversionistas semilla en el 5° Demo Day “Now” del Tec de Monterrey León.",
+        tags: ["iOS", "GPS", "IoT", "Startup"],
+        github: "https://github.com/Ciip1996/TrackerMe",
+        status: "Archived" as const,
+        metrics: "Publicado en Periódico AM (2017)",
       },
     ],
     visitAriaLabel: "Visitar",
@@ -433,6 +456,15 @@ export const es: Dictionary = {
         lang: "ES",
       },
       {
+        title: "Ingeniero mexicano logra empleo en Microsoft tras más de 200 rechazos",
+        source: "El Congresista",
+        date: "Oct 2026",
+        excerpt:
+          "Medio de Guanajuato que retoma su camino desde León hasta un puesto de ingeniero de software en Microsoft, incluyendo sus estudios en el extranjero.",
+        url: "https://elcongresista.mx/politica/guanajuato/ingeniero-mexicano-empleo-microsoft",
+        lang: "ES",
+      },
+      {
         title: "La Beca Global de Corea 2019 para Estudiantes Universitarios de África y América Latina Culmina con Éxito",
         source: "Dongseo University",
         date: "Ago 2019",
@@ -476,6 +508,29 @@ export const es: Dictionary = {
           "\"Uriel Hernández, Iván Ibarra y David Alcaraz desarrollaron 'Tracker me', un sistema de geolocalización vehicular…\" — Cobertura del periódico regional sobre el 5° 'Now' Demo Day en el Tec de Monterrey León, donde el equipo presentó su proyecto ante inversionistas semilla.",
         url: "https://www.am.com.mx/news/2017/06/06/invierten-en-start-up-291518.html",
         lang: "ES",
+      },
+    ],
+  },
+
+  social: {
+    enabled: true,
+    sectionLabel: "Redes",
+    heading: "Sigue Mi Camino",
+    subtitle:
+      "La vida de un ingeniero de software mexicano en Microsoft: consejos de carrera, becas, estudiar en el extranjero y tecnología.",
+    followLabel: "Seguir",
+    links: [
+      {
+        platform: "instagram",
+        handle: "@ivani.dev",
+        url: "https://www.instagram.com/ivani.dev/",
+        description: "Consejos de carrera, becas y vida en Seattle.",
+      },
+      {
+        platform: "tiktok",
+        handle: "@civan.js",
+        url: "https://www.tiktok.com/@civan.js",
+        description: "Videos cortos sobre tecnología, gadgets y trabajar en Microsoft.",
       },
     ],
   },

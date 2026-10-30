@@ -196,6 +196,28 @@ export interface Dictionary {
     }>;
   };
 
+  /**
+   * Social media section (Instagram, TikTok, …).
+   * Toggle `enabled` from /admin to show or hide it everywhere.
+   */
+  social: {
+    enabled: boolean;
+    sectionLabel: string;
+    heading: string;
+    subtitle: string;
+    /** Text for the follow button on each card, e.g. "Follow" */
+    followLabel: string;
+    links: Array<{
+      platform: "instagram" | "tiktok" | "youtube" | "x" | "other";
+      /** Display handle, e.g. "@ivani.dev" */
+      handle: string;
+      /** Full profile URL */
+      url: string;
+      /** Optional one-line description of what you post there */
+      description?: string;
+    }>;
+  };
+
   notFound: {
     body: string;
     back: string;
