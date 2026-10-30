@@ -116,7 +116,7 @@ export default function Navbar({ visibleSections }: NavbarProps) {
       }`}
     >
       <div className="container max-w-5xl px-6 flex items-center justify-between h-16">
-        <a href="#" className="font-bold text-lg tracking-tight overflow-hidden">
+        <a href="#" className="font-bold text-lg tracking-tight overflow-hidden whitespace-nowrap shrink-0 mr-4">
           <AnimatePresence mode="wait" initial={false}>
             {showName ? (
               <motion.span
@@ -144,21 +144,23 @@ export default function Navbar({ visibleSections }: NavbarProps) {
           </AnimatePresence>
         </a>
 
-        <div className="hidden md:flex items-center gap-8">
-          <ul className="flex items-center gap-8">
+        {/* Full link bar only from lg (1024px+); below that the hamburger menu is used,
+            so the name never gets squeezed onto several lines on small desktops/tablets. */}
+        <div className="hidden lg:flex items-center gap-4 xl:gap-8 min-w-0">
+          <ul className="flex items-center gap-5 xl:gap-8">
             {navItems.map((item) => (
               <li key={item.href}>
                 {item.isPage ? (
                   <Link
                     href={item.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors whitespace-nowrap"
                   >
                     {item.label}
                   </Link>
                 ) : (
                   <a
                     href={item.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors whitespace-nowrap"
                   >
                     {item.label}
                   </a>
@@ -188,7 +190,7 @@ export default function Navbar({ visibleSections }: NavbarProps) {
           </div>
         </div>
 
-        <div className="flex items-center gap-1 md:hidden">
+        <div className="flex items-center gap-1 lg:hidden">
           <button
             onClick={toggleLang}
             className="flex items-center gap-1 p-2 text-muted-foreground hover:text-foreground transition-colors text-xs font-mono font-medium"
@@ -225,7 +227,7 @@ export default function Navbar({ visibleSections }: NavbarProps) {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-background/95 backdrop-blur-lg border-b border-border overflow-hidden"
+            className="lg:hidden bg-background/95 backdrop-blur-lg border-b border-border overflow-hidden"
           >
             <ul className="px-6 py-4 space-y-3">
               {navItems.map((item) => (
