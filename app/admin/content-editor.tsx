@@ -211,6 +211,20 @@ function HeroEditor({ data, onChange }: { data: Dictionary["hero"]; onChange: (d
       <TextField label="Last Name" value={data.lastName} onChange={(v) => onChange({ ...data, lastName: v })} />
       <TextField label="Bio" value={data.bio} onChange={(v) => onChange({ ...data, bio: v })} multiline />
       <TextField label="Location" value={data.location} onChange={(v) => onChange({ ...data, location: v })} placeholder="City · Open to Remote" />
+      <label className="flex items-center justify-between gap-4 p-3 rounded-lg border border-border bg-background cursor-pointer">
+        <span>
+          <span className="block text-sm font-medium">Show birth line</span>
+          <span className="block text-xs text-muted-foreground">Displays the line below under your location in the hero.</span>
+        </span>
+        <input
+          type="checkbox"
+          role="switch"
+          checked={data.showBirthLine !== false}
+          onChange={(e) => onChange({ ...data, showBirthLine: e.target.checked })}
+          className="w-5 h-5 accent-primary shrink-0"
+        />
+      </label>
+      <TextField label="Birth line" value={data.birthLine ?? ""} onChange={(v) => onChange({ ...data, birthLine: v || undefined })} placeholder="Born in 1996 in León, Guanajuato, Mexico" />
       <TextField label="CTA Button Text" value={data.cta} onChange={(v) => onChange({ ...data, cta: v })} />
     </div>
   );

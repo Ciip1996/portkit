@@ -31,8 +31,10 @@ export const en: Dictionary = {
     subtitle: "Software Engineer at Microsoft",
     firstName: "Ivan",
     lastName: "Ibarra Pacheco",
-    bio: "Software Engineer at Microsoft. Born in 1996 in León, Guanajuato, Mexico. Holds a Master’s in Cybersecurity from Tec de Monterrey and has 8+ years of experience building web applications with React, TypeScript, Python, Node.js, and AWS, growing from a small company in León to mid-size and large tech companies before joining Microsoft.",
+    bio: "Software Engineer at Microsoft. Holds a Master’s in Cybersecurity from Tec de Monterrey and has 8+ years of experience building web applications with React, TypeScript, Python, Node.js, and AWS, growing from a small company in León to mid-size and large tech companies before joining Microsoft.",
     location: "Redmond, WA \u00b7 From León, Mexico",
+    birthLine: "Born in 1996 in León, Guanajuato, Mexico",
+    showBirthLine: true,
     cta: "Get in Touch",
   },
 

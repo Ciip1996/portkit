@@ -34,6 +34,10 @@ export interface Dictionary {
     lastName: string;
     bio: string;
     location: string;
+    /** Birth line shown under the location, e.g. "Born in 1996 in León, Guanajuato, Mexico" */
+    birthLine?: string;
+    /** Show or hide the birth line (toggle in /admin → Hero). Defaults to shown. */
+    showBirthLine?: boolean;
     cta: string;
   };
 

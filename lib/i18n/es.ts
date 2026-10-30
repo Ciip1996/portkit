@@ -31,8 +31,10 @@ export const es: Dictionary = {
     subtitle: "Ingeniero de Software en Microsoft",
     firstName: "Ivan",
     lastName: "Ibarra Pacheco",
-    bio: "Ingeniero de Software en Microsoft. Nacido en 1996 en León, Guanajuato, México. Maestro en Ciberseguridad por el Tec de Monterrey, con más de 8 años de experiencia desarrollando aplicaciones web con React, TypeScript, Python, Node.js y AWS, creciendo desde una empresa pequeña en León hasta empresas tecnológicas medianas y grandes antes de llegar a Microsoft.",
+    bio: "Ingeniero de Software en Microsoft. Maestro en Ciberseguridad por el Tec de Monterrey, con más de 8 años de experiencia desarrollando aplicaciones web con React, TypeScript, Python, Node.js y AWS, creciendo desde una empresa pequeña en León hasta empresas tecnológicas medianas y grandes antes de llegar a Microsoft.",
     location: "Redmond, WA \u00b7 Originario de León, México",
+    birthLine: "Nacido en 1996 en León, Guanajuato, México",
+    showBirthLine: true,
     cta: "Cont\u00e1ctame",
   },
 

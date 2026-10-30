@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Github, Linkedin, Mail, MapPin, ArrowDown } from "lucide-react";
+import { Github, Linkedin, Mail, MapPin, Cake, ArrowDown } from "lucide-react";
 import Image from "next/image";
 import { useTranslation } from "@/lib/i18n";
 import { portfolio } from "@/config/portfolio";
@@ -141,6 +141,19 @@ export default function HeroSection() {
               <MapPin className="w-4 h-4 text-primary" aria-hidden="true" />
               <span>{t.hero.location}</span>
             </motion.div>
+
+            {/* Birth line — toggle in /admin → Hero ("Show birth line"). Shown unless explicitly turned off. */}
+            {t.hero.showBirthLine !== false && t.hero.birthLine && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.58 }}
+                className="flex items-center justify-center md:justify-start gap-2 text-muted-foreground text-sm -mt-4 mb-6"
+              >
+                <Cake className="w-4 h-4 text-primary" aria-hidden="true" />
+                <span>{t.hero.birthLine}</span>
+              </motion.div>
+            )}
 
             <motion.div
               initial={{ opacity: 0 }}
