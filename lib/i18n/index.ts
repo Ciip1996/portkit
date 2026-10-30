@@ -23,7 +23,19 @@ export function useTranslation(): Dictionary {
 
   if (Object.keys(overrides).length === 0) return base;
 
-  return { ...base, ...overrides } as Dictionary;
+  // Merge each overridden section on top of its file default, so fields added in
+  // code later (e.g. hero.birthLine) still have a value when an older admin save
+  // doesn't include them. Lists inside a section are still replaced as a whole.
+  const merged: Record<string, unknown> = { ...base };
+  for (const [key, value] of Object.entries(overrides)) {
+    const fallback = (base as unknown as Record<string, unknown>)[key];
+    merged[key] = isPlainObject(fallback) && isPlainObject(value) ? { ...fallback, ...value } : value;
+  }
+  return merged as unknown as Dictionary;
+}
+
+function isPlainObject(v: unknown): v is Record<string, unknown> {
+  return typeof v === "object" && v !== null && !Array.isArray(v);
 }
 
 export type { Dictionary };

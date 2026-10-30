@@ -843,7 +843,13 @@ function SectionPanel({ sectionKey, lang }: { sectionKey: SectionKey; lang: Lang
       const res = await fetch(`/api/content/${sectionKey}?lang=${lang}`);
       if (res.ok) {
         const data: ApiResponse = await res.json();
-        setContent(data.content as Dictionary[SectionKey]);
+        const loaded = data.content as Dictionary[SectionKey];
+        const fallback = en[sectionKey] as unknown;
+        // Fill in fields added to the code after this section was last saved (English defaults only).
+        const filled = lang === "en" && loaded && typeof loaded === "object" && !Array.isArray(loaded) && fallback && typeof fallback === "object"
+          ? ({ ...(fallback as object), ...(loaded as object) } as Dictionary[SectionKey])
+          : loaded;
+        setContent(filled);
         setHasOverride(JSON.stringify(data.content) !== JSON.stringify(en[sectionKey]));
       }
     } catch { /* fall through */ } finally { setLoading(false); }
