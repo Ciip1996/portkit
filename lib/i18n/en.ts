@@ -28,11 +28,11 @@ export const en: Dictionary = {
 
   hero: {
     imgAlt: "Ivan Pacheco — Software Engineer",
-    subtitle: "Sr. Software Engineer — Frontend Specialist",
+    subtitle: "Software Engineer at Microsoft",
     firstName: "Ivan",
     lastName: "Ibarra Pacheco",
-    bio: "Passionate Software Engineer with a strong foundation in web development, software engineering, and team collaboration. Currently pursuing a Master\u2019s in Cybersecurity and seeking opportunities to apply skills in frontend/backend development, agile practices, and technologies such as React, TypeScript, Python, Node.js, and AWS to create impactful user experiences.",
-    location: "Mexico \u00b7 Open to Remote",
+    bio: "Software Engineer at Microsoft. Born in 1996 in León, Guanajuato, Mexico. Holds a Master’s in Cybersecurity from Tec de Monterrey and has 8+ years of experience building web applications with React, TypeScript, Python, Node.js, and AWS, growing from a small company in León to mid-size and large tech companies before joining Microsoft.",
+    location: "Redmond, WA \u00b7 From León, Mexico",
     cta: "Get in Touch",
   },
 
@@ -42,10 +42,21 @@ export const en: Dictionary = {
     viewFullTimeline: "View Full Timeline",
     jobs: [
       {
+        title: "Software Engineer",
+        company: "Microsoft",
+        location: "Redmond, WA",
+        period: "Aug 2026 \u2013 Present",
+        logo: "microsoft",
+        bullets: [
+          "Returned full-time after the 2025 Software Engineering Master\u2019s Internship.",
+        ],
+        tags: [],
+      },
+      {
         title: "Senior Software Engineer / FE Lead",
         company: "C Infinity Solutions",
         location: "Remote, Mexico",
-        period: "Sep 2025 \u2013 Present",
+        period: "Sep 2025 \u2013 Aug 2026",
         logo: "cinfinity",
         logoBg: "#0f1218",
         bullets: [
@@ -207,7 +218,7 @@ export const en: Dictionary = {
       {
         school: "Monterrey Institute of Technology and Higher Education (ITESM)",
         degree: "Master\u2019s Degree in Cybersecurity",
-        detail: "Expected Graduation: Summer/Fall 2026",
+        detail: "Graduated 2026",
         location: "Mexico",
         logo: "itesm",
         sortDate: "2024-08",
@@ -397,7 +408,7 @@ export const en: Dictionary = {
   contact: {
     sectionLabel: "Contact",
     heading: "Let\u2019s Connect",
-    subtitle: "Open to remote opportunities and relocation. Feel free to reach out!",
+    subtitle: "Open to collaborations, speaking, and media inquiries. Feel free to reach out!",
   },
 
   footer: {
@@ -412,6 +423,15 @@ export const en: Dictionary = {
     readArticle: "Read Article",
     featuredIn: "As Featured In",
     items: [
+      {
+        title: "Mexican Engineer Turned More Than 200 Rejections into an Opportunity with Microsoft",
+        source: "Latino Herald",
+        date: "Oct 2026",
+        excerpt:
+          "Feature profile and interview by the Seattle-based Latino Herald on his path from León, Guanajuato to a full-time software engineering role at Microsoft, including his scholarships in Canada and South Korea and his master’s at Tec de Monterrey.",
+        url: "https://latinoherald.com/2026/10/28/ingeniero-mexicano-microsoft-200-rechazos/",
+        lang: "ES",
+      },
       {
         title: "The 2019 Global Korea Scholarship for African and Latin American Undergraduate Students Comes to a Successful Close",
         source: "Dongseo University",
@@ -486,13 +506,15 @@ export const en: Dictionary = {
       press: "Press",
     },
     events: [
-      { type: "education", title: "Expected Graduation \u2014 Master\u2019s Degree in Cybersecurity", subtitle: "Monterrey Institute of Technology and Higher Education (ITESM)", location: "Mexico", period: "Fall 2026 (Expected)", startDate: "2026-09", description: "Expected completion of M.S. in Cybersecurity.", tags: ["Cybersecurity", "Networking", "Cryptography"], logo: "itesm" },
-      { type: "work", title: "Senior Software Engineer / FE Lead", subtitle: "C Infinity Solutions", location: "Remote, Mexico", period: "Sep 2025 \u2013 Present", startDate: "2025-09", endDate: "present", bullets: ["Returned after Microsoft internship to lead frontend architecture of a React-based SaaS CMS serving enterprise clients with Dynamics 365 integrations.", "Mentored and guided 3\u20134 frontend engineers through code reviews, technical direction, and best practices in performance and maintainability.", "Owned the frontend codebase and collaborated with product, design, and backend teams to deliver high-impact, user-facing features."], tags: ["React", "TypeScript", "Dynamics 365", "Cube", "Node.js", "Agile/Scrum"], logo: "cinfinity", logoBg: "#0f1218" },
+      { type: "press", title: "Mexican Engineer Turned More Than 200 Rejections into an Opportunity with Microsoft", subtitle: "Latino Herald", location: "Seattle, WA", period: "Oct 2026", startDate: "2026-10", description: "Feature profile and interview on his path from León, Guanajuato to a full-time software engineering role at Microsoft.", tags: ["Media", "Interview"] },
+      { type: "work", title: "Software Engineer", subtitle: "Microsoft", location: "Redmond, WA", period: "Aug 2026 – Present", startDate: "2026-08", endDate: "present", bullets: ["Returned full-time after the 2025 Software Engineering Master’s Internship."], tags: [], logo: "microsoft" },
+      { type: "education", title: "Graduated — Master’s Degree in Cybersecurity", subtitle: "Monterrey Institute of Technology and Higher Education (ITESM)", location: "Mexico", period: "2026", startDate: "2026-07", description: "Completed M.S. in Cybersecurity.", tags: ["Cybersecurity", "Networking", "Cryptography"], logo: "itesm" },
+      { type: "work", title: "Senior Software Engineer / FE Lead", subtitle: "C Infinity Solutions", location: "Remote, Mexico", period: "Sep 2025 \u2013 Aug 2026", startDate: "2025-09", endDate: "2026-08", bullets: ["Returned after Microsoft internship to lead frontend architecture of a React-based SaaS CMS serving enterprise clients with Dynamics 365 integrations.", "Mentored and guided 3\u20134 frontend engineers through code reviews, technical direction, and best practices in performance and maintainability.", "Owned the frontend codebase and collaborated with product, design, and backend teams to deliver high-impact, user-facing features."], tags: ["React", "TypeScript", "Dynamics 365", "Cube", "Node.js", "Agile/Scrum"], logo: "cinfinity", logoBg: "#0f1218" },
       { type: "work", title: "Software Engineering Master\u2019s Internship", subtitle: "Microsoft", location: "Redmond, WA", period: "Jun 2025 \u2013 Sep 2025", startDate: "2025-06", endDate: "2025-09", bullets: ["Built a Dynamics 365 app to digitize a legal/business process, improving efficiency and data integrity.", "Developed custom plugins and business logic in JavaScript and C#; collaborated with stakeholders to align on requirements."], tags: ["Dynamics 365", "JavaScript", "C#", "Power Platform"], logo: "microsoft" },
       { type: "certification", title: "Duolingo English Test \u2014 CEFR C1", subtitle: "Duolingo", location: "", period: "2025", startDate: "2025-02", description: "CEFR C1 certified English proficiency via Duolingo English Test.", tags: ["English", "CEFR C1"] },
       { type: "certification", title: "IELTS Certificate", subtitle: "International English Language Testing System", location: "", period: "2025", startDate: "2025-01", description: "International English proficiency certification.", tags: ["English", "IELTS"] },
       { type: "work", title: "Senior Software Engineer / FE Lead", subtitle: "C Infinity Solutions", location: "Remote, Mexico", period: "Oct 2024 \u2013 May 2025", startDate: "2024-10", endDate: "2025-05", bullets: ["Led the frontend architecture of a React-based SaaS CMS, defining scalable patterns, state management, and reusable components.", "Mentored and guided 3\u20134 frontend engineers through code reviews, technical direction, and best practices in performance and maintainability.", "Owned the frontend codebase and collaborated with product, design, and backend teams to deliver high-impact, user-facing features."], tags: ["React", "TypeScript", "Dynamics 365", "Cube", "Node.js", "Agile/Scrum"], logo: "cinfinity", logoBg: "#0f1218" },
-      { type: "education", title: "Started Master\u2019s Degree in Cybersecurity", subtitle: "Monterrey Institute of Technology and Higher Education (ITESM)", location: "Mexico", period: "Aug 2024 \u2013 Present", startDate: "2024-08", description: "Expected graduation: Summer/Fall 2026.", tags: ["Cybersecurity", "Networking", "Cryptography"], logo: "itesm" },
+      { type: "education", title: "Started Master\u2019s Degree in Cybersecurity", subtitle: "Monterrey Institute of Technology and Higher Education (ITESM)", location: "Mexico", period: "Aug 2024 \u2013 2026", startDate: "2024-08", description: "Two-year M.S. in Cybersecurity, completed in 2026.", tags: ["Cybersecurity", "Networking", "Cryptography"], logo: "itesm" },
       { type: "work", title: "Senior Software Engineer", subtitle: "Drift", location: "Guadalajara, Mexico", period: "Mar 2023 \u2013 Nov 2024", startDate: "2023-03", endDate: "2024-11", bullets: ["Maintained and enhanced the Design System Library, ensuring consistency and high-quality user experiences across the platform.", "Collaborated with the Analytics Team to create, improve, and refine reports using Highcharts, Cube, React, TypeScript, and the internal Design System Library.", "Developed custom components from scratch, including Gantt charts and other advanced visualizations, to deliver insightful and polished analytics reports."], tags: ["React", "TypeScript", "Highcharts", "Cube", "Design System", "Jest", "Agile/Scrum"], logo: "drift", logoBg: "#ffffff" },
       { type: "work", title: "Software Engineer III", subtitle: "Wizeline", location: "Guadalajara, Mexico", period: "Jun 2022 \u2013 Mar 2023", startDate: "2022-06", endDate: "2023-03", bullets: ["Served as Tech Lead on the greenfield Arc XP launch for The Baltimore Banner, a nationally recognized nonprofit news startup ($50M+ funded).", "Coordinated between design, management, and development teams as frontend lead; the publication grew to 30,000+ paid subscribers in its first year."], tags: ["React", "TypeScript", "SCSS", "Arc XP", "Jest"], logo: "wizeline" },
       { type: "work", title: "Software Engineer II", subtitle: "Wizeline", location: "Guadalajara, Mexico", period: "Oct 2021 \u2013 Jun 2022", startDate: "2021-10", endDate: "2022-06", bullets: ["Contracted for a major news company in the US, delivering frontend solutions and developing React components for clients located primarily in the US and Canada.", "Configured, maintained, and added features to Arc XP-based platforms, ensuring high-quality CMS integrations and responsive user experiences."], tags: ["React", "Arc XP", "SCSS", "TypeScript", "CMS"], logo: "wizeline" },

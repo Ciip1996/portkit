@@ -7,6 +7,7 @@ import { Briefcase, ArrowRight, ChevronDown, ChevronUp } from "lucide-react";
 import Timeline, { type TimelineEntry } from "@/components/ui/timeline";
 import SectionHeader from "@/components/ui/section-header";
 import { useTranslation } from "@/lib/i18n";
+import { sortByMostRecent } from "@/lib/sort-by-date";
 
 const INITIAL_COUNT = 3;
 
@@ -16,7 +17,8 @@ export default function ExperienceSection() {
 
   const allItems: TimelineEntry[] = useMemo(
     () =>
-      t.experience.jobs.map((job) => ({
+      // Most recent first, even if a job was added at the end from /admin.
+      sortByMostRecent(t.experience.jobs).map((job) => ({
         type: "work" as const,
         title: job.title,
         subtitle: job.company,

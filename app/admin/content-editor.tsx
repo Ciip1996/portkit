@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import { en } from "@/lib/i18n/en";
 import type { Dictionary } from "@/lib/i18n/types";
+import { sortByMostRecent } from "@/lib/sort-by-date";
 
 type SectionKey = keyof Dictionary;
 type Lang = "en" | "es";
@@ -227,7 +228,8 @@ function ExperienceEditor({ data, onChange }: { data: Dictionary["experience"]; 
     if (!draft) return;
     const next = [...data.jobs];
     if (editIdx === -1) next.push(draft); else next[editIdx!] = draft;
-    onChange({ ...data, jobs: next }); setEditIdx(null); setDraft(null);
+    // Keep jobs ordered most recent first, so new entries don't land at the bottom.
+    onChange({ ...data, jobs: sortByMostRecent(next) }); setEditIdx(null); setDraft(null);
   };
 
   if (draft !== null && editIdx !== null) {
@@ -566,7 +568,8 @@ function TimelineEditor({ data, onChange }: { data: Dictionary["timelinePage"]; 
     if (!draft) return;
     const next = [...data.events];
     if (editIdx === -1) next.push(draft); else next[editIdx!] = draft;
-    onChange({ ...data, events: next }); setEditIdx(null); setDraft(null);
+    // Keep events ordered most recent first, so new entries don't land at the bottom.
+    onChange({ ...data, events: sortByMostRecent(next) }); setEditIdx(null); setDraft(null);
   };
 
   if (draft !== null && editIdx !== null) {

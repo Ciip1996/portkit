@@ -28,11 +28,11 @@ export const es: Dictionary = {
 
   hero: {
     imgAlt: "Ivan Pacheco \u2014 Ingeniero de Software",
-    subtitle: "Ing. de Software Sr. \u2014 Especialista en Frontend",
+    subtitle: "Ingeniero de Software en Microsoft",
     firstName: "Ivan",
     lastName: "Ibarra Pacheco",
-    bio: "Ingeniero de Software apasionado con una s\u00f3lida formaci\u00f3n en desarrollo web, ingenier\u00eda de software y trabajo en equipo. Actualmente cursando una Maestr\u00eda en Ciberseguridad y en b\u00fasqueda de oportunidades para aplicar habilidades en desarrollo frontend/backend, pr\u00e1cticas \u00e1giles y tecnolog\u00edas como React, TypeScript, Python, Node.js y AWS para crear experiencias de usuario impactantes.",
-    location: "M\u00e9xico \u00b7 Disponible en remoto",
+    bio: "Ingeniero de Software en Microsoft. Nacido en 1996 en León, Guanajuato, México. Maestro en Ciberseguridad por el Tec de Monterrey, con más de 8 años de experiencia desarrollando aplicaciones web con React, TypeScript, Python, Node.js y AWS, creciendo desde una empresa pequeña en León hasta empresas tecnológicas medianas y grandes antes de llegar a Microsoft.",
+    location: "Redmond, WA \u00b7 Originario de León, México",
     cta: "Cont\u00e1ctame",
   },
 
@@ -42,10 +42,21 @@ export const es: Dictionary = {
     viewFullTimeline: "Ver Línea de Tiempo Completa",
     jobs: [
       {
+        title: "Ingeniero de Software",
+        company: "Microsoft",
+        location: "Redmond, WA",
+        period: "Ago 2026 \u2013 Presente",
+        logo: "microsoft",
+        bullets: [
+          "Regresé de tiempo completo después de la pasantía de maestría en Ingeniería de Software de 2025.",
+        ],
+        tags: [],
+      },
+      {
         title: "Ingeniero de Software Senior / L\u00edder Frontend",
         company: "C Infinity Solutions",
         location: "Remoto, M\u00e9xico",
-        period: "Sep 2025 \u2013 Presente",
+        period: "Sep 2025 \u2013 Ago 2026",
         logo: "cinfinity",
         logoBg: "#0f1218",
         bullets: [
@@ -207,7 +218,7 @@ export const es: Dictionary = {
       {
         school: "Instituto Tecnol\u00f3gico y de Estudios Superiores de Monterrey (ITESM)",
         degree: "Maestr\u00eda en Ciberseguridad",
-        detail: "Graduaci\u00f3n esperada: Verano/Oto\u00f1o 2026",
+        detail: "Graduado en 2026",
         location: "M\u00e9xico",
         logo: "itesm",
         sortDate: "2024-08",
@@ -397,7 +408,7 @@ export const es: Dictionary = {
   contact: {
     sectionLabel: "Contacto",
     heading: "Conectemos",
-    subtitle: "Disponible para oportunidades remotas y reubicaci\u00f3n. \u00a1No dudes en contactarme!",
+    subtitle: "Disponible para colaboraciones, charlas y entrevistas con medios. ¡No dudes en contactarme!",
   },
 
   footer: {
@@ -412,6 +423,15 @@ export const es: Dictionary = {
     readArticle: "Leer Art\u00edculo",
     featuredIn: "Publicado En",
     items: [
+      {
+        title: "Ingeniero mexicano convirtió más de 200 rechazos en una oportunidad con Microsoft",
+        source: "Latino Herald",
+        date: "Oct 2026",
+        excerpt:
+          "Perfil y entrevista de Latino Herald (Seattle) sobre su camino desde León, Guanajuato, hasta un puesto de tiempo completo como ingeniero de software en Microsoft, incluyendo sus becas en Canadá y Corea del Sur y su maestría en el Tec de Monterrey.",
+        url: "https://latinoherald.com/2026/10/28/ingeniero-mexicano-microsoft-200-rechazos/",
+        lang: "ES",
+      },
       {
         title: "La Beca Global de Corea 2019 para Estudiantes Universitarios de África y América Latina Culmina con Éxito",
         source: "Dongseo University",
@@ -486,13 +506,15 @@ export const es: Dictionary = {
       press: "Prensa",
     },
     events: [
-      { type: "education", title: "Graduación Esperada \u2014 Maestría en Ciberseguridad", subtitle: "Instituto Tecnológico y de Estudios Superiores de Monterrey (ITESM)", location: "México", period: "Otoño 2026 (Esperado)", startDate: "2026-09", description: "Finalización esperada de la Maestría en Ciberseguridad.", tags: ["Ciberseguridad", "Redes", "Criptografía"], logo: "itesm" },
-      { type: "work", title: "Ingeniero de Software Senior / Líder Frontend", subtitle: "C Infinity Solutions", location: "Remoto, México", period: "Sep 2025 – Presente", startDate: "2025-09", endDate: "present", bullets: ["Regresé después de la pasantía en Microsoft para liderar la arquitectura frontend de un CMS SaaS basado en React que atiende a clientes empresariales con integraciones de Dynamics 365.", "Mentoré y guié a 3–4 ingenieros frontend a través de revisiones de código, dirección técnica y mejores prácticas en rendimiento y mantenibilidad.", "Responsable del código frontend, colaborando con equipos de producto, diseño y backend para entregar funcionalidades de alto impacto."], tags: ["React", "TypeScript", "Dynamics 365", "Cube", "Node.js", "Agile/Scrum"], logo: "cinfinity", logoBg: "#0f1218" },
+      { type: "press", title: "Ingeniero mexicano convirtió más de 200 rechazos en una oportunidad con Microsoft", subtitle: "Latino Herald", location: "Seattle, WA", period: "Oct 2026", startDate: "2026-10", description: "Perfil y entrevista sobre su camino desde León, Guanajuato, hasta un puesto de tiempo completo como ingeniero de software en Microsoft.", tags: ["Medios", "Entrevista"] },
+      { type: "work", title: "Ingeniero de Software", subtitle: "Microsoft", location: "Redmond, WA", period: "Ago 2026 – Presente", startDate: "2026-08", endDate: "present", bullets: ["Regresé de tiempo completo después de la pasantía de maestría en Ingeniería de Software de 2025."], tags: [], logo: "microsoft" },
+      { type: "education", title: "Graduación — Maestría en Ciberseguridad", subtitle: "Instituto Tecnológico y de Estudios Superiores de Monterrey (ITESM)", location: "México", period: "2026", startDate: "2026-07", description: "Maestría en Ciberseguridad completada.", tags: ["Ciberseguridad", "Redes", "Criptografía"], logo: "itesm" },
+      { type: "work", title: "Ingeniero de Software Senior / Líder Frontend", subtitle: "C Infinity Solutions", location: "Remoto, México", period: "Sep 2025 – Ago 2026", startDate: "2025-09", endDate: "2026-08", bullets: ["Regresé después de la pasantía en Microsoft para liderar la arquitectura frontend de un CMS SaaS basado en React que atiende a clientes empresariales con integraciones de Dynamics 365.", "Mentoré y guié a 3–4 ingenieros frontend a través de revisiones de código, dirección técnica y mejores prácticas en rendimiento y mantenibilidad.", "Responsable del código frontend, colaborando con equipos de producto, diseño y backend para entregar funcionalidades de alto impacto."], tags: ["React", "TypeScript", "Dynamics 365", "Cube", "Node.js", "Agile/Scrum"], logo: "cinfinity", logoBg: "#0f1218" },
       { type: "work", title: "Pasantía de Maestría en Ingeniería de Software", subtitle: "Microsoft", location: "Redmond, WA", period: "Jun 2025 – Sep 2025", startDate: "2025-06", endDate: "2025-09", bullets: ["Desarrollé una aplicación en Dynamics 365 para digitalizar un proceso legal/empresarial, mejorando la eficiencia e integridad de datos.", "Creé plugins personalizados y lógica de negocio en JavaScript y C#; colaboré con stakeholders para alinear requerimientos."], tags: ["Dynamics 365", "JavaScript", "C#", "Power Platform"], logo: "microsoft" },
       { type: "certification", title: "Duolingo English Test — CEFR C1", subtitle: "Duolingo", location: "", period: "2025", startDate: "2025-02", description: "Certificación de dominio del inglés nivel CEFR C1 mediante Duolingo English Test.", tags: ["Inglés", "CEFR C1"] },
       { type: "certification", title: "Certificado IELTS", subtitle: "International English Language Testing System", location: "", period: "2025", startDate: "2025-01", description: "Certificación internacional de dominio del inglés.", tags: ["Inglés", "IELTS"] },
       { type: "work", title: "Ingeniero de Software Senior / Líder Frontend", subtitle: "C Infinity Solutions", location: "Remoto, México", period: "Oct 2024 – May 2025", startDate: "2024-10", endDate: "2025-05", bullets: ["Lideré la arquitectura frontend de un CMS SaaS basado en React, definiendo patrones escalables, manejo de estado y componentes reutilizables.", "Mentoré y guié a 3–4 ingenieros frontend a través de revisiones de código, dirección técnica y mejores prácticas en rendimiento y mantenibilidad.", "Responsable del código frontend, colaborando con equipos de producto, diseño y backend para entregar funcionalidades de alto impacto."], tags: ["React", "TypeScript", "Dynamics 365", "Cube", "Node.js", "Agile/Scrum"], logo: "cinfinity", logoBg: "#0f1218" },
-      { type: "education", title: "Inicio de Maestría en Ciberseguridad", subtitle: "Instituto Tecnológico y de Estudios Superiores de Monterrey (ITESM)", location: "México", period: "Ago 2024 – Presente", startDate: "2024-08", description: "Graduación esperada: Verano/Otoño 2026.", tags: ["Ciberseguridad", "Redes", "Criptografía"], logo: "itesm" },
+      { type: "education", title: "Inicio de Maestría en Ciberseguridad", subtitle: "Instituto Tecnológico y de Estudios Superiores de Monterrey (ITESM)", location: "México", period: "Ago 2024 – 2026", startDate: "2024-08", description: "Maestría en Ciberseguridad de dos años, completada en 2026.", tags: ["Ciberseguridad", "Redes", "Criptografía"], logo: "itesm" },
       { type: "work", title: "Ingeniero de Software Senior", subtitle: "Drift", location: "Guadalajara, México", period: "Mar 2023 – Nov 2024", startDate: "2023-03", endDate: "2024-11", bullets: ["Mantuve y mejoré la librería del Sistema de Diseño, asegurando consistencia y experiencias de usuario de alta calidad en toda la plataforma.", "Colaboré con el equipo de Analytics para crear, mejorar y refinar reportes usando Highcharts, Cube, React, TypeScript y la librería interna del Sistema de Diseño.", "Desarrollé componentes personalizados desde cero, incluyendo diagramas de Gantt y otras visualizaciones avanzadas, para entregar reportes analíticos detallados y pulidos."], tags: ["React", "TypeScript", "Highcharts", "Cube", "Design System", "Jest", "Agile/Scrum"], logo: "drift", logoBg: "#ffffff" },
       { type: "work", title: "Ingeniero de Software III", subtitle: "Wizeline", location: "Guadalajara, México", period: "Jun 2022 – Mar 2023", startDate: "2022-06", endDate: "2023-03", bullets: ["Fungí como Tech Lead en el lanzamiento greenfield de Arc XP para The Baltimore Banner, un startup de noticias sin fines de lucro reconocido a nivel nacional ($50M+ en fondos).", "Coordiné entre equipos de diseño, gestión y desarrollo como líder frontend; la publicación creció a más de 30,000 suscriptores de pago en su primer año."], tags: ["React", "TypeScript", "SCSS", "Arc XP", "Jest"], logo: "wizeline" },
       { type: "work", title: "Ingeniero de Software II", subtitle: "Wizeline", location: "Guadalajara, México", period: "Oct 2021 – Jun 2022", startDate: "2021-10", endDate: "2022-06", bullets: ["Contratado para una importante empresa de noticias en EE.UU., entregando soluciones frontend y desarrollando componentes en React para clientes ubicados principalmente en EE.UU. y Canadá.", "Configuré, mantuve y añadí funcionalidades a plataformas basadas en Arc XP, asegurando integraciones CMS de alta calidad y experiencias de usuario responsivas."], tags: ["React", "Arc XP", "SCSS", "TypeScript", "CMS"], logo: "wizeline" },

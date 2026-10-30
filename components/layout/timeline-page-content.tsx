@@ -9,6 +9,7 @@ import Footer from "@/components/layout/footer";
 import { useTheme } from "@/components/providers/theme-provider";
 import { useLang } from "@/components/providers/language-provider";
 import { useTranslation } from "@/lib/i18n";
+import { sortByMostRecent } from "@/lib/sort-by-date";
 
 const themeIcons = { system: Monitor, dark: Moon, light: Sun } as const;
 
@@ -32,7 +33,8 @@ export default function TimelinePageContent() {
 
   const allEntries: TimelineEntry[] = useMemo(
     () =>
-      t.timelinePage.events.map((ev) => ({
+      // Most recent first, even if an event was added at the end from /admin.
+      sortByMostRecent(t.timelinePage.events).map((ev) => ({
         type: ev.type,
         typeLabel: t.timelinePage.typeLabels[ev.type],
         title: ev.title,

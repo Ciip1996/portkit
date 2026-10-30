@@ -19,18 +19,18 @@ export const portfolio = {
     lastName: "Ibarra Pacheco",
     /** Shown in metadata titles and JSON-LD */
     displayName: "Ivan Pacheco",
-    jobTitle: "Senior Software Engineer",
+    jobTitle: "Software Engineer",
     /** Short bio for SEO description and JSON-LD */
     shortBio:
-      "Passionate Software Engineer with 8+ years of experience building scalable web applications. Specialized in React, TypeScript, Python, Node.js, and AWS.",
+      "Software Engineer at Microsoft with 8+ years of experience building scalable web applications. Specialized in React, TypeScript, Python, Node.js, and AWS.",
     /** Current employer (used in JSON-LD) */
-    currentEmployer: "C Infinity Solutions",
+    currentEmployer: "Microsoft",
     /** Email address */
     email: "bytepacheco@gmail.com",
     /** Phone (optional – only shown in protected variants) */
     phone: "+52 477 880 8887",
     /** Location string shown in hero section */
-    location: "Mexico · Open to Remote",
+    location: "Redmond, WA · From León, Mexico",
   },
 
   // ── Site ───────────────────────────────────────────────────────────────────
@@ -69,12 +69,12 @@ export const portfolio = {
   // ── SEO & Metadata ─────────────────────────────────────────────────────────
   metadata: {
     /** Default <title> for the homepage */
-    defaultTitle: "Ivan Pacheco — Senior Software Engineer",
+    defaultTitle: "Ivan Pacheco — Software Engineer at Microsoft",
     /** %s is replaced with the page name on sub-routes */
     titleTemplate: "%s | Ivan Pacheco",
     /** Meta description */
     description:
-      "Passionate Software Engineer with 8+ years of experience building scalable web applications. Specialized in React, TypeScript, Python, Node.js, and AWS. Former Microsoft intern, currently pursuing a Master's in Cybersecurity.",
+      "Passionate Software Engineer with 8+ years of experience building scalable web applications. Specialized in React, TypeScript, Python, Node.js, and AWS. Software Engineer at Microsoft with a Master's in Cybersecurity from Tec de Monterrey.",
     /** Keywords for meta[name=keywords] */
     keywords: [
       "Ivan Pacheco",
@@ -95,7 +95,7 @@ export const portfolio = {
     siteName: "Ivan Pacheco — Portfolio",
     /** OG image short description */
     ogDescription:
-      "Senior Software Engineer with 8+ years of experience. Specialized in React, TypeScript, and cloud technologies. Former Microsoft intern.",
+      "Software Engineer at Microsoft with 8+ years of experience. Specialized in React, TypeScript, and cloud technologies.",
   },
 
   // ── JSON-LD Structured Data ─────────────────────────────────────────────────
@@ -122,7 +122,7 @@ export const portfolio = {
     /** Role label displayed above your name in the OG card */
     roleLabel: "Software Engineer",
     /** Tagline shown below your name */
-    tagline: "8+ years building scalable web applications. React, TypeScript & Cloud. Former Microsoft intern.",
+    tagline: "Software Engineer at Microsoft. 8+ years building scalable web applications. React, TypeScript & Cloud.",
     /** Footer links displayed at the bottom of the OG card */
     footerLinks: [
       "github.com/Ciip1996",
